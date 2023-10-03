@@ -13,5 +13,5 @@ const product = {
   status: Status.published, // alternative value "draft"
 };
 
-
+console.log(product)
 

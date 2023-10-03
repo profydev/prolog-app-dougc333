@@ -9,22 +9,19 @@
 
 
 
-class CatalogItem{
-    name="";
-
+/* class CatalogItem{
   updateProduct(name:string){
     this.name=name;
   }
 }
-
-import {useState} from "react"
-function Item(){
+ */
+/* function Item(){
   const [name,setName] = useState("")
 
   function updateItem(name:string){
     setName(name)
   }
-}
+} */
 
 
 /* function updateProduct(name: string, price: number, images: string[]) {

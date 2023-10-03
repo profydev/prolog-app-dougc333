@@ -11,3 +11,5 @@ const product = updateProduct({
   price: 2.99,
   images: ["image-1.png", "image-2.png"],
 });
+
+console.log(product)
