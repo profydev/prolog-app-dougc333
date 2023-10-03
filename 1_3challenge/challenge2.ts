@@ -6,12 +6,12 @@ enum Status{
   draft = "draft",
 }
 
-const product = {
+const product2 = {
   name: "Shampoo",
   price: 2.99,
   images: ["image-1.png", "image-2.png"],
   status: Status.published, // alternative value "draft"
 };
 
-console.log(product)
+console.log(product2)
 
