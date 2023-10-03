@@ -1,0 +1,25 @@
+// Challenge: create a type describing this object
+
+const product = {
+  name: "Shampoo",
+  price: 2.99,
+  images: ["image-1.png", "image-2.png"],
+  status: "published",
+};
+
+
+npm init -y
+npm add typescript ts-node -D
+npx tsc --init
+
+npx ts-node challenge1.ts
+npx ts-node challenge2.ts
+
+cd enum_color
+pnpm run dev
+
+review map on challenge2
+demo enum_color, print out div with color in react, css reset demo.
+demo react_map, map over array using JSON.stringify to print out to browser window
+
+
