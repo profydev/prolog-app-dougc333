@@ -21,8 +21,8 @@ export function Product({ name, price, images }:ProductProps) {
       <div>
         {name} ${price}
       </div>
-      {images.map((src:string) => (
-        <img src={src} alt="img"/>
+      {images.map((src:string,index) => (
+        <img src={src} alt="img" key={index}/>
       ))}
     </div>
   );

@@ -35,8 +35,8 @@ export function Product(): string | JSX.Element {
       <div>
         {product.name} ${product.price}
       </div>
-      {product.images.map((src) => (
-        <img src={src} alt="image" />
+      {product.images.map((src,index) => (
+        <img src={src} alt="image" key={index}  />
       ))}
     </div>
   );

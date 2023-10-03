@@ -25,8 +25,8 @@ export function Product({ id, name, price, images, addToBasket }: ProductProps) 
       <div>
         {name} ${price}
       </div>
-      {images.map((src) => (
-        <img src={src} alt="img" />
+      {images.map((src,index) => (
+        <img src={src} alt="img" key={index} />
       ))}
       <button onClick={() => addToBasket(id)}>Click</button>
     </div>
