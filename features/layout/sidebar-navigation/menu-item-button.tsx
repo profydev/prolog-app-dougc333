@@ -18,6 +18,21 @@ export function MenuItemButton({
   iconSrc,
   isCollapsed,
 }: MenuItemProps) {
+  if (isCollapsed && iconSrc === "/icons/arrow-left.svg") {
+    return (
+      <li className={classNames(styles.listItem, className)}>
+        <Button className={styles.anchor} onClick={onClick}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            className={styles.rightIcon}
+            src={iconSrc}
+            alt={`${text} icon`}
+          />{" "}
+          {!isCollapsed && text}{" "}
+        </Button>
+      </li>
+    );
+  }
   return (
     <li className={classNames(styles.listItem, className)}>
       <Button className={styles.anchor} onClick={onClick}>
