@@ -45,7 +45,7 @@ export function SidebarNavigation() {
             alt="logo"
             className={styles.logo}
           />
-          <Button
+          <Button data-test-id="G7EjnsLMbC7QK3G_O9YAE"
             onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
             className={styles.menuButton}
           >
@@ -72,6 +72,7 @@ export function SidebarNavigation() {
           <ul className={styles.linkList}>
             {menuItems.map((menuItem, index) => (
               <MenuItemLink
+                id={"foo"}
                 key={index}
                 {...menuItem}
                 isCollapsed={isSidebarCollapsed}
@@ -80,16 +81,18 @@ export function SidebarNavigation() {
             ))}
           </ul>
           <ul className={styles.list}>
-            <MenuItemButton
+            <MenuItemButton data-test-id="kz69XaTXZ2PAAEeQ63nSI"
+              id="fooOnYou"
               text="Support"
               iconSrc="/icons/support.svg"
               isCollapsed={isSidebarCollapsed}
+              className={styles.supportButton}
               onClick={() => {
                 alert("Support");
                 email();
               }}
             />
-            <MenuItemButton
+            <MenuItemButton data-test-id="70qB8Iv7qBIT2c9_4-wFP"
               text="Collapse"
               iconSrc="/icons/arrow-left.svg"
               isCollapsed={isSidebarCollapsed}

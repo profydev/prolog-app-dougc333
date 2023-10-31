@@ -3,9 +3,10 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier",
-    "next/core-web-vitals"
+    "next/core-web-vitals",
+    "plugin:test-selectors/recommended"
   ],
-  "plugins": ["cypress", "@typescript-eslint"],
+  "plugins": ["cypress", "@typescript-eslint","test-selectors"],
   "env": {
     "cypress/globals": true
   },

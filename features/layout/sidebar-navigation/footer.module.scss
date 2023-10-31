@@ -1,0 +1,57 @@
+@use "@styles/color";
+@use "@styles/font";
+
+.footer {
+  border: 1px dashed black;
+  background-color: color.$gray-50;
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  color: white;
+}
+
+.footer ul {
+  gap: 1.5em;
+  width: 261px;
+  outline: 1px solid black;
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.footer ul li a {
+  text-decoration: none;
+  color: color.$gray-400;
+}
+
+.logo {
+  width: 160px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 32px;
+}
+
+.logo img {
+  width: 23px;
+}
+
+.resetlist {
+  margin: 0;
+  padding: 0;
+}
+
+.version {
+  font-family: font.$text-xs-regular;
+  color: color.$gray-500;
+
+  // margin-top:.5em;
+  max-width: 160px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+
+  // outline:1px solid blue;
+  flex-grow: 1;
+  margin-left: 32px;
+}
