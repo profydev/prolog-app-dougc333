@@ -6,6 +6,10 @@ export function ProjectList() {
   const { data, isLoading, isError, error } = useGetProjects();
 
   if (isLoading) {
+    setTimeout(() => {
+      console.log("PROJECT LIST ISLOADING");
+      return <div>Loading</div>;
+    }, 1000);
     return <div>Loading</div>;
   }
 
