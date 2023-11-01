@@ -18,10 +18,10 @@ export function IssueList() {
   const projects = useGetProjects();
 
   if (projects.isLoading || issuesPage.isLoading) {
-    setTimeout(() => {
-      console.log("projects and issue list isLoading");
-      return <div>Loading</div>;
-    }, 1000);
+    // setTimeout(() => {
+    //   console.log("projects and issue list isLoading");
+    //   return <div>Loading</div>;
+    // }, 1000);
     return <div>Loading</div>;
   }
 
@@ -67,14 +67,16 @@ export function IssueList() {
       </table>
       <div className={styles.paginationContainer}>
         <div>
-          <button data-test-id="2PGWFE5fRkOHF5xQw2r-g"
+          <button
+            data-test-id="2PGWFE5fRkOHF5xQw2r-g"
             className={styles.paginationButton}
             onClick={() => navigateToPage(page - 1)}
             disabled={page === 1}
           >
             Previous
           </button>
-          <button data-test-id="-LEtP6ZNImipWxCmnT7Tr"
+          <button
+            data-test-id="-LEtP6ZNImipWxCmnT7Tr"
             className={styles.paginationButton}
             onClick={() => navigateToPage(page + 1)}
             disabled={page === meta?.totalPages}
