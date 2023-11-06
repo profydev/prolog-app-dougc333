@@ -3,14 +3,15 @@ import { useGetProjects } from "../../api/use-get-projects";
 import styles from "./project-list.module.scss";
 
 export function ProjectList() {
+  //  const { data, isLoading, isError, error } = useGetProjects();
   const { data, isLoading, isError, error } = useGetProjects();
 
   if (isLoading) {
-    // setTimeout(() => {
-    //   console.log("PROJECT LIST ISLOADING");
-    //   return <div>Loading</div>;
-    // }, 1000);
-    return <div>Loading</div>;
+    return (
+      <div className={styles.container}>
+        <div className={styles.loader}></div>
+      </div>
+    );
   }
 
   if (isError) {
@@ -19,7 +20,7 @@ export function ProjectList() {
   }
 
   return (
-    <ul className={styles.list}>
+    <ul id="projul" className={styles.list}>
       {data?.map((project) => (
         <li key={project.id}>
           <ProjectCard project={project} />

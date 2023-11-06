@@ -23,11 +23,12 @@ describe("Project List", () => {
     it("renders the projects", () => {
       const languageNames = ["React", "Node.js", "Python"];
 
-      // get all project cards
+      // get all project cards. There are 3 project cards?
       cy.get("main")
-        .find("li")
+        .get("#projul")
+        .children("li")
         .each(($el, index) => {
-          // check that project data is rendered
+          // check that project data is rendered.there are 3 cards.
           cy.wrap($el).contains(mockProjects[index].name);
           cy.wrap($el).contains(languageNames[index]);
           cy.wrap($el).contains(mockProjects[index].numIssues);

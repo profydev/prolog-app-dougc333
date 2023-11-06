@@ -45,7 +45,8 @@ export function SidebarNavigation() {
             alt="logo"
             className={styles.logo}
           />
-          <Button data-test-id="G7EjnsLMbC7QK3G_O9YAE"
+          <Button
+            data-test-id="G7EjnsLMbC7QK3G_O9YAE"
             onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
             className={styles.menuButton}
           >
@@ -81,8 +82,8 @@ export function SidebarNavigation() {
             ))}
           </ul>
           <ul className={styles.list}>
-            <MenuItemButton data-test-id="kz69XaTXZ2PAAEeQ63nSI"
-              id="fooOnYou"
+            <MenuItemButton
+              data-test-id="kz69XaTXZ2PAAEeQ63nSI"
               text="Support"
               iconSrc="/icons/support.svg"
               isCollapsed={isSidebarCollapsed}
@@ -92,7 +93,8 @@ export function SidebarNavigation() {
                 email();
               }}
             />
-            <MenuItemButton data-test-id="70qB8Iv7qBIT2c9_4-wFP"
+            <MenuItemButton
+              data-test-id="70qB8Iv7qBIT2c9_4-wFP"
               text="Collapse"
               iconSrc="/icons/arrow-left.svg"
               isCollapsed={isSidebarCollapsed}

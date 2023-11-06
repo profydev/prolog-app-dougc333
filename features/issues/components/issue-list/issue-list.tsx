@@ -18,15 +18,20 @@ export function IssueList() {
   const projects = useGetProjects();
 
   if (projects.isLoading || issuesPage.isLoading) {
-    // setTimeout(() => {
-    //   console.log("projects and issue list isLoading");
-    //   return <div>Loading</div>;
-    // }, 1000);
-    return <div>Loading</div>;
+    return (
+      <>
+        <div className={styles.loaderContainer}>
+          <div className={styles.loader}></div>
+        </div>
+      </>
+    );
   }
 
   if (projects.isError) {
-    console.error(projects.error);
+    console.error(
+      "note to myself this should be in cypress test using Promise.reject",
+      projects.error,
+    );
     return <div>Error loading projects: {projects.error.message}</div>;
   }
 
@@ -46,6 +51,27 @@ export function IssueList() {
 
   return (
     <div className={styles.container}>
+      <div className="inputBar">
+        <div className="button">
+          <button className="resolve">Resolve Selected Issues</button>
+        </div>
+        <div className="dropdown">
+          <select id="resolve" name="resolve" title="resolve">
+            <option value="resolved">Resolved</option>
+            <option value="unresolved">Unresolved</option>
+          </select>
+        </div>
+        <div className="level">
+          <select id="level" name="level" title="level">
+            <option value="error">Errror</option>
+            <option value="warning">Warning</option>
+            <option value="info">Info</option>
+          </select>
+        </div>
+        <div className="search">
+          <input type="text" title="search" placeholder="search" />
+        </div>
+      </div>
       <table className={styles.table}>
         <thead>
           <tr className={styles.headerRow}>

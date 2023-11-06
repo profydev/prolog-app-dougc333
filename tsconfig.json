@@ -24,6 +24,6 @@
     },
     "noEmit": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/TestButton.tscomponents/B.stories.tsxdftsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "cypress", "cypress.config.ts"]
 }
