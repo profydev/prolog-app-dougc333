@@ -27,7 +27,7 @@ export function PageContainer({ children, title, info }: PageContainerProps) {
           <div className={styles.info}>{info}</div>
           {children}
         </div>
-        <Footer></Footer>
+        <Footer dataCy="footerId"></Footer>
       </main>
     </div>
   );
