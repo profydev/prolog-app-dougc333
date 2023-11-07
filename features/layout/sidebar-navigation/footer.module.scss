@@ -20,7 +20,7 @@
 .footer ul {
   gap: 1.5em;
   width: 261px;
-  outline: 1px solid black;
+  // outline: 1px solid black;
   display: flex;
   justify-content: flex-start;
   list-style: none;
@@ -46,6 +46,8 @@
   @media (width < 500px) {
     order: 2;
     justify-content: center;
+    margin-top: 9px;
+    margin-left:30px;
   }
 }
 
@@ -69,6 +71,7 @@
 
   @media (width < 500px) {
     order: 3;
-    margin-left: 0;
+    margin-right:34px;
+    margin-top:24px;
   }
 }
