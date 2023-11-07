@@ -20,7 +20,7 @@ export function IssueList() {
   if (projects.isLoading || issuesPage.isLoading) {
     return (
       <>
-        <div className={styles.loaderContainer}>
+        <div data-cy="issueId" className={styles.loaderContainer}>
           <div className={styles.loader}></div>
         </div>
       </>
