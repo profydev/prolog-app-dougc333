@@ -1,0 +1,4 @@
+https://github.com/bahmutov/cypress-recurse
+https://www.youtube.com/watch?v=lWWzQFt-0BI
+
+Tricky if you dont specify mobile or desktop mode, Will default in mobile mode because viewport width taken by cypress
