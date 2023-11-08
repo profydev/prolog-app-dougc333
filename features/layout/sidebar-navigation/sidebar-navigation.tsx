@@ -87,9 +87,11 @@ export function SidebarNavigation() {
               text="Support"
               iconSrc="/icons/support.svg"
               isCollapsed={isSidebarCollapsed}
-              className={styles.supportButton}
               onClick={() => {
-                alert("Support");
+                {
+                  alert("Support");
+                  email();
+                }
                 email();
               }}
             />

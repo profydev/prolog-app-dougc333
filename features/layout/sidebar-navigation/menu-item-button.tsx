@@ -13,7 +13,6 @@ type MenuItemProps = {
 };
 
 export function MenuItemButton({
-  id,
   className,
   text,
   onClick,
@@ -22,12 +21,11 @@ export function MenuItemButton({
 }: MenuItemProps) {
   if (isCollapsed && iconSrc === "/icons/arrow-left.svg") {
     return (
-      <li id={"asdf"} className={classNames(styles.listItem, className)}>
-        <Button data-test-id="EBMyWu8gPyLF_FVIrTt3g" id={"bbbbb"} className={styles.anchor} onClick={onClick}>
+      <li className={classNames(styles.listItem, className)}>
+        <Button className={styles.anchor} onClick={onClick}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            id={id}
-            className={styles.righticon}
+            className={styles.rightIcon}
             src={iconSrc}
             alt={`${text} icon`}
           />{" "}
@@ -36,10 +34,13 @@ export function MenuItemButton({
       </li>
     );
   }
-
   return (
     <li className={classNames(styles.listItem, className)}>
-      <Button data-test-id="jxHy9zfhsh3_Sc_JO1sBv" className={styles.anchor} onClick={onClick}>
+      <Button
+        data-test-id="jxHy9zfhsh3_Sc_JO1sBv"
+        className={styles.anchor}
+        onClick={onClick}
+      >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img className={styles.icon} src={iconSrc} alt={`${text} icon`} />{" "}
         {!isCollapsed && text}{" "}

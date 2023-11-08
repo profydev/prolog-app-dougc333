@@ -27,6 +27,14 @@ export function Badge({
   size = BadgeSize.md,
   color = BadgeColor.primary,
 }: BadgeProps) {
+  // if (children === "Info") {
+  //   children = "Stable";
+  //   color = BadgeColor.success;
+  // }
+  // if (children === "Error") {
+  //   children = "Critical";
+  //   color = BadgeColor.error;
+  // }
   return (
     <div className={classNames(styles.container, styles[size], styles[color])}>
       {children}

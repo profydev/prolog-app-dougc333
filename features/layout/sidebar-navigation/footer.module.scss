@@ -2,7 +2,6 @@
 @use "@styles/font";
 
 .footer {
-  border: 1px dashed black;
   background-color: color.$gray-50;
   display: flex;
   justify-content: space-between;
@@ -20,8 +19,6 @@
 .footer ul {
   gap: 1.5em;
   width: 261px;
-
-  // outline: 1px solid black;
   display: flex;
   justify-content: flex-start;
   list-style: none;

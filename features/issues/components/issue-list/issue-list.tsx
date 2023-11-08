@@ -48,7 +48,8 @@ export function IssueList() {
     {} as Record<string, ProjectLanguage>,
   );
   const { items, meta } = issuesPage.data || {};
-
+  //console.log("issuesPage data.items[0]:",Object.keys(issuesPage.data.items[0]))
+  //console.log(issuesPage.data.items[0]['numUsers'])
   return (
     <div className={styles.container}>
       <div className="inputBar">
