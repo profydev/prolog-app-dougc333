@@ -1,0 +1,113 @@
+@use "@styles/color";
+@use "@styles/font";
+@use "@styles/space";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+
+  &.label {
+    color: color.$gray-700;
+    font: font.$text-md-medium;
+    /* Text sm/Medium */
+    // font-family: Inter;
+    // font-size: 14px;
+    // font-style: normal;
+    // font-weight: 500;
+    // line-height: 20px; /* 142.857% */
+  }
+
+  &.hint {
+    color: color.$gray-500;
+    font: font.$text-md-regular;
+
+    /* Text sm/Normal */
+    // font-family: Inter;
+    // font-size: 14px;
+    // font-style: normal;
+    // font-weight: 400;
+    // line-height: 20px; /* 142.857% */
+  }
+
+  &.empty {
+    border-radius: 8px;
+    border: 1px solid color.$gray-300;
+    background: White;
+    /* Shadow/xs */
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    &.placeholder {
+      color: color.$gray-500;
+      font: font.$text-sm-regular;
+
+      // /* Text md/Normal */
+      // font-family: Inter;
+      // font-size: 16px;
+      // font-style: normal;
+      // font-weight: 400;
+      // line-height: 24px; /* 150% */
+    }
+  }
+
+  &.filled {
+    border-radius: 8px;
+    border: 1px solid color.$gray-300;
+    background: White;
+
+    /* Shadow/xs */
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    &.placeholder {
+      color: color.$gray-900;
+      font: font.$text-sm-regular;
+      /* Text md/Normal */
+      //   font-family: Inter;
+      //   font-size: 16px;
+      //   font-style: normal;
+      //   font-weight: 400;
+      //   line-height: 24px; /* 150% */
+    }
+  }
+  &.focused {
+    border-radius: 8px;
+    border: 1px solid color.$primary-300;
+    background: White;
+
+    /* Shadow/xs focused 4px primary-100 */
+    box-shadow:
+      0px 0px 0px 4px #f4ebff,
+      0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    &.placeholder {
+      color: color.$gray-900;
+      font: font.$text-sm-regular;
+      /* Text md/Normal */
+      //   font-family: Inter;
+      //   font-size: 16px;
+      //   font-style: normal;
+      //   font-weight: 400;
+      //   line-height: 24px; /* 150% */
+    }
+  }
+  &.disabled {
+    border-radius: 8px;
+    border: 1px solid color.$gray-300;
+    background: color.$gray-50;
+
+    /* Shadow/xs */
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    &.placeholder {
+      color: color.$gray-500;
+      font: font.$text-sm-regular;
+      /* Text md/Normal */
+      //   font-family: Inter;
+      //   font-size: 16px;
+      //   font-style: normal;
+      //   font-weight: 400;
+      //   line-height: 24px; /* 150% */
+    }
+  }
+  &.open {
+    &.placeholder {
+      font: font.$text-sm-regular;
+    }
+  }
+}

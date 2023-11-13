@@ -33,10 +33,7 @@ describe("numEvents and numUsers testing", () => {
     it("test numUsers numEvents page1", () => {
       cy.visit("http://localhost:3000/dashboard/issues?page=1");
       cy.get("table tbody tr").each(($el, index) => {
-        //console.log("index:",index)
-        //cy.log("index:",index)
         cy.wrap($el).within(() => {
-          //cy.log("mockIssues1:",mockIssues1["items"][0].numUsers)
           cy.get("td")
             .eq(3)
             .should("contain.text", mockIssues1["items"][index].numUsers);
