@@ -1,0 +1,62 @@
+@use "@styles/color";
+@use "@styles/font";
+@use "@styles/space";
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.label {
+    color: color.$gray-700;
+    font: font.$text-md-medium;
+
+    &.sm {
+      gap: 8px;
+      line-height: 20px;
+      font-size: 14px;
+    }
+
+    &.md {
+      gap: 12px;
+      line-height: 24px;
+      font-size: 16px;
+    }
+  }
+
+  &.sm {
+    /* 2 pixels off maybe an invisible border is the box shadow not border */
+    height: 16px;
+    width: 16px;
+    border-radius: 6px;
+  }
+
+  &.md {
+    height: 20px;
+    width: 20px;
+    border-radius: 6px;
+  }
+
+  &.default {
+    border: 1px solid color.$gray-300;
+    background: white;
+  }
+
+  &.hover {
+    border: 1px solid color.$primary-600;
+    background: color.$primary-50;
+  }
+
+  &.focused {
+    border: 1px solid color.$primary-300;
+    background: white;
+
+    /* Focus ring/4px primary-100 */
+    box-shadow: 0 0 0 4px #f4ebff;
+  }
+
+  &.disabled {
+    border: 1px solid color.$gray-200;
+    background: color.$gray-100;
+  }
+}

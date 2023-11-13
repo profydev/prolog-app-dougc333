@@ -15,6 +15,9 @@ export const decorators = [
 ];
 
 export const parameters = {
+  options: {
+    showPanel: true,
+  },
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
