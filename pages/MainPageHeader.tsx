@@ -1,11 +1,13 @@
 import AvatarCard from "./AvatarCard";
 import styles from "./MainPageHeader.module.scss";
 import Link from "next/link";
+import classNames from "classnames";
+
 function MainPageHeader() {
   return (
     <>
-      <div className={styles.headerContainer}>
-        <div className={styles.leftLogo}>
+      <div className={classNames(styles.headerContainer)}>
+        <div className={classNames(styles.leftLogo)}>
           <img src="/icons/logo-large.svg" alt="icon" />
         </div>
         <ul className={styles.headerListUL}>
@@ -22,15 +24,22 @@ function MainPageHeader() {
             <a href="#">Pricing</a>
           </li>
         </ul>
-        <Link href="/dashboard" className={styles.dashboardButton}>
-          Dashboard
+        <Link href="/dashboard" className={classNames(styles.link)}>
+          <span className={classNames(styles.linktext)}>Dashboard</span>
         </Link>
       </div>
-      <h1>Your Issues in Sight. At All Times</h1>
-      <p>Powerful error tracking and monitoring for software applications</p>
-      <p>Trusted by over 4000 startups</p>
-      <img src="/icons/Screen.png" alt="screen" />
-      <div className={styles.threeAvatars}>
+      <h1 className={classNames(styles.header)}>
+        Your Issues in Sight. At All Times
+      </h1>
+      <p className={classNames(styles.p)}>
+        Powerful error tracking and monitoring for software applications Trusted
+        by over 4000 startups
+      </p>
+      <p className={classNames(styles.p)}>Trusted by over 4000 startups</p>
+      <div className={classNames(styles.imgfiller)}>
+        <img src="/icons/Screen.png" alt="screen" />
+      </div>
+      <div className={classNames(styles.threeAvatars)}>
         <AvatarCard
           cardTitle="Frontend Development"
           cardText="Prolog has saved us many times. We get an alert, investigate the errror and fix it. That simple"
@@ -53,6 +62,7 @@ function MainPageHeader() {
           title="Engineering Manager, Catalog"
         ></AvatarCard>
       </div>
+      <div className={classNames(styles.bottomSpacer)}></div>
     </>
   );
 }

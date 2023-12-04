@@ -4,6 +4,16 @@ import React from "react";
 import { Story as StoryType } from "@storybook/react";
 import { NavigationProvider } from "../features/layout";
 import { decorator as mockRouterDecorator } from "../__mocks__/next/router";
+import { Preview } from "@storybook/react";
+import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+
+// export const preview: Preview = {
+//   parameters: {
+//     viewport: {
+//       viewports: INITIAL_VIEWPORTS,
+//     },
+//   },
+// };
 
 export const decorators = [
   (Story: StoryType) => (
@@ -24,5 +34,8 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+  },
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
   },
 };

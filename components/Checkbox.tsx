@@ -69,22 +69,22 @@ export function Checkbox({
 
   return (
     <>
-      <label
-        className={classNames(styles.container, styles.label, styles[size])}
-      >
-        <input
-          ref={checkRef}
-          className={classNames(
-            styles.container,
-            styles[size],
-            styles[dynamicState],
-          )}
-          type="checkbox"
-          checked={checked}
-          onChange={(ev) => handler(ev)}
-        />
-        {children}
-      </label>
+      <div className={classNames(styles.container)}>
+        <label className={classNames(styles.label, styles[size])}>
+          <input
+            ref={checkRef}
+            className={classNames(
+              styles.input,
+              styles[size],
+              styles[dynamicState],
+            )}
+            type="checkbox"
+            checked={checked}
+            onChange={(ev) => handler(ev)}
+          />
+          <span className={classNames(styles.children)}>{children}</span>
+        </label>
+      </div>
     </>
   );
 }

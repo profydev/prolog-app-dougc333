@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 import styles from "./Select.module.scss";
 
@@ -14,45 +14,60 @@ export enum State {
   open = "open",
 }
 
+//const arrayUsers<[string]> = ["Olivia Rhye","Phoenix Baker", "Olivia Rhye", "Lena Steiner","Demi Wilkinson","Candice Wu","Ntatli Craig","Drew Cano"]
+//const singleUser = ["Olivia Rhye"]
+
 export function Select({ state }: SelectProps) {
-  const [placeholder, setPlaceholder] = useState("");
-  const optionRef = useRef<HTMLInputElement>(null);
+  const [optionValue, setOptionValue] = useState<string[]>([""]);
 
   useEffect(() => {
+    console.log("useEffect staate:", state);
     if (state === "empty") {
-      setPlaceholder("Select team member");
+      setOptionValue(["Select team member"]);
     } else if (state === "filled") {
-      setPlaceholder("Olivia Rhye");
+      setOptionValue(["Olivia Rhye"]);
     } else if (state === "focused") {
-      setPlaceholder("Olivia Rhye");
+      setOptionValue(["Olivia Rhye"]);
     } else if (state === "disabled") {
-      setPlaceholder("Olivia Rhye");
+      setOptionValue(["Olivia Rhye"]);
     } else if (state === "open") {
-      setPlaceholder("TBD add list");
+      setOptionValue([
+        "Olivia Rhye",
+        "Phoenix Baker",
+        "Olivia Rhye",
+        "Lena Steiner",
+        "Demi Wilkinson",
+        "Candice Wu",
+        "Ntatli Craig",
+        "Drew Cano",
+      ]);
     }
   }, [state]);
 
   return (
-    <div>
-      <label
-        className={classNames(styles.container, styles.label)}
-        htmlFor="label"
-      >
+    <div className={classNames(styles.container)}>
+      <span className={classNames(styles.container, styles.label)}>
         Team member
-        <input
-          ref={optionRef}
-          placeholder={placeholder}
-          title="a"
-          className={classNames(
-            styles.container,
-            styles[state],
-            styles.placeholder,
-          )}
-        />
-        <label className={classNames(styles.hint)} htmlFor="hint">
-          This is a hint text to help user
-        </label>
-      </label>
+      </span>
+      <select
+        onChange={(e) => {
+          console.log("e.target.value:", e.target.value);
+        }}
+        className={classNames(
+          styles.container,
+          styles.select,
+          styles[state],
+          styles.option,
+        )}
+      >
+        {optionValue.map((x) => (
+          <option key={x}>{x}</option>
+        ))}
+      </select>
+
+      <span className={classNames(styles.container, styles.hint)}>
+        This is a hint text to help user
+      </span>
     </div>
   );
 }

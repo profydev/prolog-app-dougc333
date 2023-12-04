@@ -1,6 +1,6 @@
 import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
-import { TestButton, Size, Hierarchy, State } from "./TestButton";
+import { TestButton, Size, Hierarchy, State, IconState } from "./TestButton";
 
 export default {
   title: "UI/Button",
@@ -13,12 +13,13 @@ export default {
 
 const Template: StoryFn<typeof TestButton> = ({
   size,
+  icon,
   hierarchy,
   state,
   children,
 }) => (
   <div style={{ padding: 50 }}>
-    <TestButton hierarchy={hierarchy} size={size} state={state}>
+    <TestButton icon={icon} hierarchy={hierarchy} size={size} state={state}>
       {children}
     </TestButton>
   </div>
@@ -27,18 +28,9 @@ const Template: StoryFn<typeof TestButton> = ({
 export const Default = Template.bind({});
 Default.args = {
   size: Size.sm,
-  hierarchy: Hierarchy.Primary,
-  children: "Button CTA",
-};
-Default.parameters = {
-  viewMode: "docs",
-};
-
-export const Default_Medium = Template.bind({});
-Default.args = {
-  size: Size.md,
-  hierarchy: Hierarchy.Primary,
   state: State.default,
+  icon: IconState.None,
+  hierarchy: Hierarchy.Primary,
   children: "Button CTA",
 };
 Default.parameters = {

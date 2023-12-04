@@ -7,21 +7,10 @@
   justify-content: center;
   align-items: center;
 
-  &.label {
+  // outline: 1px solid black;
+
+  .children {
     color: color.$gray-700;
-    font: font.$text-md-medium;
-
-    &.sm {
-      gap: 8px;
-      line-height: 20px;
-      font-size: 14px;
-    }
-
-    &.md {
-      gap: 12px;
-      line-height: 24px;
-      font-size: 16px;
-    }
   }
 
   &.sm {

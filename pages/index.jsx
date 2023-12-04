@@ -1,4 +1,4 @@
-import { Routes } from "@config/routes";
+//import { Routes } from "@config/routes";
 import styles from "./index.module.scss";
 import MainPageHeader from "./MainPageHeader";
 
@@ -6,11 +6,6 @@ const IssuesPage = () => {
   return (
     <div>
       <MainPageHeader></MainPageHeader>
-      <header className={styles.header}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/icons/logo-large.svg" alt="Prolog logo" />
-        <a href={Routes.projects}>Dashboard</a>
-      </header>
       <button
         className={styles.contactButton}
         onClick={() =>
