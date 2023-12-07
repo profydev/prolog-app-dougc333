@@ -1,5 +1,188 @@
+@use "@styles/color";
+@use "@styles/font";
+
 .container {
+  // border:1px solid black;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+
+  // align-items: center;
+  flex-direction: column;
+
+  &.havelabel {
+    color: #344054;
+
+    /* Text sm/Medium */
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+  }
+
+  &.nolabel {
+    color: white;
+  }
+
+  &.havehint {
+    color: #667085;
+
+    /* Text sm/Medium */
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+    &.haveerror {
+      // color:green;
+    }
+  }
+
+  &.nohint {
+    color: white;
+  }
+
+  // &.haveerror{
+  //   border:1px solid black;
+  //   color: #F04438;
+  //   background-repeat: no-repeat;
+  //   background-position: right center;
+  //   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='17' viewBox='0 0 16 17' fill='none'%3E%3Cpath d='M8.00016 5.72803V8.39469M8.00016 11.0614H8.00683M14.6668 8.39469C14.6668 12.0766 11.6821 15.0614 8.00016 15.0614C4.31826 15.0614 1.3335 12.0766 1.3335 8.39469C1.3335 4.7128 4.31826 1.72803 8.00016 1.72803C11.6821 1.72803 14.6668 4.7128 14.6668 8.39469Z' stroke='%23F04438' stroke-width='1.33333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  // }
+
+  &.empty {
+    &.haveicon {
+      background-image: url("./icons/mail.svg");
+      background-repeat: no-repeat;
+      background-position: 4px 10px;
+      padding: 0 30px; /* only affects text */
+
+      &.haveerror {
+        background-image: url("./icons/mail.svg"),
+          url("./icons/alert-circle.svg");
+        background-repeat: no-repeat no-repeat;
+        background-position:
+          4px 10px,
+          350px 10px;
+      }
+    }
+
+    &.noicon {
+      // background-image: none;
+      padding: 0;
+    }
+
+    height: 44px;
+    width: 320px;
+    padding: 0 25px; /* only affects text */
+    border-radius: 8px;
+    border: 1px solid color.$gray-300;
+    background: #fff;
+
+    /* small */
+    box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%);
+    color: color.$gray-500;
+
+    /* Text md/Normal */
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+  }
+
+  &.filled {
+    &.haveicon {
+      background-position: left center;
+      background-repeat: no-repeat;
+      background-image: url("./icons/mail.svg");
+      padding: 0 25px; /* only affects text */
+    }
+
+    &.noicon {
+      background-image: none;
+      padding: 0;
+    }
+
+    height: 44px;
+    width: 320px;
+    border-radius: 8px;
+    border: 1px solid color.$gray-300;
+    background: #fff;
+
+    /* Shadow/xs */
+    box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%);
+    color: color.$gray-900;
+
+    /* Text md/Normal */
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+  }
+
+  &.focused {
+    &.haveicon {
+      background-position: left center;
+      background-repeat: no-repeat;
+      background-image: url("./icons/mail.svg");
+      padding: 0 25px; /* only affects text */
+    }
+
+    &.noicon {
+      background-image: none;
+      padding: 0;
+    }
+
+    height: 44px;
+    width: 320px;
+    border-radius: 8px;
+    border: 1px solid color.$primary-300;
+    background: #fff;
+
+    /* Shadow/xs focused 4px primary-100 */
+    box-shadow:
+      0 0 0 4px #f4ebff,
+      0 1px 2px 0 rgb(16 24 40 / 5%);
+    color: color.$gray-900;
+
+    /* Text md/Normal */
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+  }
+
+  &.disabled {
+    &.haveicon {
+      background-position: left center;
+      background-repeat: no-repeat;
+      background-image: url("./icons/mail.svg");
+      padding: 0 25px; /* only affects text */
+    }
+
+    &.noicon {
+      background-image: none;
+      padding: 0;
+    }
+
+    height: 44px;
+    width: 320px;
+    border-radius: 8px;
+    border: 1px solid color.$gray-300;
+    background: color.$gray-50;
+
+    /* Shadow/xs */
+    box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%);
+    color: color.$gray-500;
+
+    /* Text md/Normal */
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+  }
 }

@@ -41,7 +41,7 @@ export function Select2({ state }: SelectProps) {
   return (
     <div className={classNames(styles.container, styles[state])}>
       Label
-      <div className={classNames(styles.input)}>
+      <div className={classNames(styles.container, styles.input)}>
         <input type="text" />
         <button title="foo">
           <img src="./icons/chevron.svg"></img>

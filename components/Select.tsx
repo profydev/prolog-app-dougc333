@@ -14,8 +14,25 @@ export enum State {
   open = "open",
 }
 
-//const arrayUsers<[string]> = ["Olivia Rhye","Phoenix Baker", "Olivia Rhye", "Lena Steiner","Demi Wilkinson","Candice Wu","Ntatli Craig","Drew Cano"]
-//const singleUser = ["Olivia Rhye"]
+export enum Label {
+  noLabel = "noLabel",
+  label = "label",
+}
+
+export enum Hint {
+  noHint = "noHint",
+  hint = "hint",
+}
+
+export enum Icon {
+  noIcon = "noIcon",
+  icon = "icon",
+}
+
+export enum Error {
+  noError = "noError",
+  error = "error",
+}
 
 export function Select({ state }: SelectProps) {
   const [optionValue, setOptionValue] = useState<string[]>([""]);

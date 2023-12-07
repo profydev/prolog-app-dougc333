@@ -4,6 +4,10 @@ const nextConfig = {
   images: {
     domains: ["prolog-api.profy.dev"],
   },
+  sassOptions: {
+    sourceMap: true,
+  },
+  productionBrowserSourceMaps: true,
 };
 
 module.exports = nextConfig;

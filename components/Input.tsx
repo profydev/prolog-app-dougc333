@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import styles from "./Input.module.scss";
-//import { normalizeRouteRegex } from "next/dist/lib/load-custom-routes";
+import { useState, useEffect } from "react";
 
 type InputProps = {
   state: State;
@@ -8,7 +8,7 @@ type InputProps = {
   label: Label;
   hint: Hint;
   error: Error;
-  children: React.ReactNode;
+  children: [React.ReactNode, React.ReactNode, React.ReactNode];
 };
 
 export enum State {
@@ -37,6 +37,7 @@ export enum Error {
   haveerror = "haveerror",
   noerror = "noerror",
 }
+
 export function Input({
   children,
   state,
@@ -45,21 +46,43 @@ export function Input({
   hint,
   error,
 }: InputProps) {
+  const [placeholder, setPlaceholder] = useState("");
+  useEffect(() => {
+    if (icon === Icon.noicon) {
+      setPlaceholder("olivia@untitledui.com");
+    }
+    if (icon === Icon.haveicon) {
+      setPlaceholder("olivia@untitledui.com");
+    }
+  }, []);
+
   return (
-    <label>
-      Label
+    <div className={classNames(styles.container)}>
+      <span className={classNames(styles.container, styles[label])}>
+        {children[0]}
+      </span>
       <input
         className={classNames(
           styles.container,
-          styles[state],
           styles[icon],
+          styles[state],
           styles[label],
           styles[hint],
           styles[error],
         )}
+        placeholder={placeholder}
       />
-      {children}
-    </label>
+      <span
+        className={classNames(
+          styles.container,
+          styles[hint],
+          styles[icon],
+          styles[error],
+        )}
+      >
+        {error === Error.noerror ? children[1] : children[2]}
+      </span>
+    </div>
   );
 }
 

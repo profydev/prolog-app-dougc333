@@ -5,6 +5,10 @@
 }
 
 .input {
+  &input {
+    height: 44px;
+    width: 320px;
+  }
   &button {
     height: 20px;
     width: 20px;

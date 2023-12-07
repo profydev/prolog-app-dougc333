@@ -29,11 +29,11 @@ const Template: StoryFn<typeof Input> = ({
 
 export const Default = Template.bind({});
 Default.args = {
-  children: "Label",
+  children: ["Label", "This is a hint", "This is a error message"],
   state: State.empty,
-  label: Label.nolabel,
+  label: Label.havelabel,
   icon: Icon.noicon,
-  hint: Hint.nohint,
+  hint: Hint.havehint,
   error: Error.noerror,
 };
 Default.parameters = {

@@ -15,7 +15,7 @@ module.exports = {
     options: {},
   },
 
-  staticDirs: ["../public"],
+  staticDirs: ["../public", "../public/icons"],
 
   env: (config) => ({
     ...config,
