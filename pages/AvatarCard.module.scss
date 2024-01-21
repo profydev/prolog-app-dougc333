@@ -1,0 +1,45 @@
+@use "@styles/color";
+@use "@styles/font";
+
+.cardLayout {
+  border: 1px solid black;
+  height: 416px;
+  width: 375px;
+}
+
+.cardTitle {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+  color: #6941c6;
+  font-family: Inter, sans-serif;
+}
+
+.cardText {
+  font-family: Inter, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0;
+  text-align: center;
+  color: #101828;
+}
+
+.imgHolder {
+  display: flex;
+  justify-content: center;
+}
+
+.imgHolder img {
+  width: 20px;
+  height: 20px;
+}
+
+.name {
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+}

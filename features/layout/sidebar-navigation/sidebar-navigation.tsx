@@ -16,10 +16,15 @@ const menuItems = [
   { text: "Settings", iconSrc: "/icons/settings.svg", href: Routes.settings },
 ];
 
+function email() {
+  window.open("mailto:support@prolog.com?subject=Support Request");
+}
+
 export function SidebarNavigation() {
   const router = useRouter();
   const { isSidebarCollapsed, toggleSidebar } = useContext(NavigationContext);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div
       className={classNames(
@@ -36,15 +41,12 @@ export function SidebarNavigation() {
         <header className={styles.header}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={
-              isSidebarCollapsed
-                ? "/icons/logo-small.svg"
-                : "/icons/logo-large.svg"
-            }
+            src={"/icons/logo-large.svg"}
             alt="logo"
             className={styles.logo}
           />
           <Button
+            data-test-id="G7EjnsLMbC7QK3G_O9YAE"
             onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
             className={styles.menuButton}
           >
@@ -71,6 +73,7 @@ export function SidebarNavigation() {
           <ul className={styles.linkList}>
             {menuItems.map((menuItem, index) => (
               <MenuItemLink
+                id={"foo"}
                 key={index}
                 {...menuItem}
                 isCollapsed={isSidebarCollapsed}
@@ -80,12 +83,20 @@ export function SidebarNavigation() {
           </ul>
           <ul className={styles.list}>
             <MenuItemButton
+              data-test-id="kz69XaTXZ2PAAEeQ63nSI"
               text="Support"
               iconSrc="/icons/support.svg"
               isCollapsed={isSidebarCollapsed}
-              onClick={() => alert("Support")}
+              onClick={() => {
+                {
+                  alert("Support");
+                  email();
+                }
+                email();
+              }}
             />
             <MenuItemButton
+              data-test-id="70qB8Iv7qBIT2c9_4-wFP"
               text="Collapse"
               iconSrc="/icons/arrow-left.svg"
               isCollapsed={isSidebarCollapsed}

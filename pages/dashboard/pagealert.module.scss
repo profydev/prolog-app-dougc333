@@ -1,0 +1,17 @@
+@use "@styles/color";
+@use "@styles/font";
+
+.div {
+  border: 1px solid color.$error-300;
+  border-radius: 8px;
+  height: 52px;
+  width: 80%;
+  font-family: font.$text-xs-regular;
+  color: color.$error-300 #fda29b;
+}
+
+.div ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
